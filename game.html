@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курица спешит домой</title>
+    <link rel="stylesheet" href="css/game-style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Стартовый экран (HTML для редактирования) -->
+        <div id="start-screen">
+            <div class="clouds cloud-left"></div>
+            <div class="clouds cloud-right"></div>
+            
+            <div class="title-box">
+                <h1>🐔 Курица спешит домой 🐔</h1>
+                <p class="author">Сделала: Юлия Коршунова</p>
+            </div>
+            
+            <div class="rules-box">
+                <h2>📋 Правила игры:</h2>
+                <ul>
+                    <li>🥚 Собери все 3 яйца из гнёзд</li>
+                    <li>⚠️ Не упади с платформ</li>
+                    <li>🐦 Избегай птиц или перепрыгивай их</li>
+                    <li>❤️ У тебя 3 жизни</li>
+                    <li>🏠 Пройди 3 уровня и доберись домой</li>
+                </ul>
+            </div>
+            
+            <div class="controls-box">
+                <span>🎮</span>
+                <span class="key">A</span> / <span class="key">D</span> или 
+                <span class="key">←</span> / <span class="key">→</span> — движение | 
+                <span class="key">Пробел</span> — прыжок
+            </div>
+            
+            <div class="credits">
+                <p>Небо: <a href="https://craftpix.net/freebies/free-1-bit-sky-and-clouds-pixel-backgrounds/" target="_blank">craftpix.net</a> | Курица и яйца: Sprout Lands Asset Pack</p>
+                <p>Использована нейросеть: Claude (Lovable)</p>
+            </div>
+            
+            <div class="start-hint">▶ Нажми ПРОБЕЛ для начала ◀</div>
+        </div>
+        
+        <canvas id="gameCanvas" width="1200" height="600"></canvas>
+    </div>
+    
+    <script src="js/InputHandler.js"></script>
+    <script src="js/Player.js"></script>
+    <script src="js/Platform.js"></script>
+    <script src="js/Egg.js"></script>
+    <script src="js/Bird.js"></script>
+    <script src="js/Collision.js"></script>
+    <script src="js/Level.js"></script>
+    <script src="js/Renderer.js"></script>
+    <script src="js/Game.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

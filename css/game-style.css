@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #87CEEB 0%, #98D8C8 50%, #F7DC6F 100%);
+    font-family: 'Courier New', monospace;
+}
+
+#game-container {
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    border: 4px solid #8B7355;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#gameCanvas {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#gameCanvas.active {
+    display: block;
+}
+
+/* ========== СТАРТОВЫЙ ЭКРАН ========== */
+#start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #87CEEB 0%, #98D8C8 50%, #F7DC6F 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 40px;
+    z-index: 10;
+}
+
+#start-screen.hidden {
+    display: none;
+}
+
+/* Облачка */
+.clouds {
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+}
+
+.clouds::before,
+.clouds::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+
+.cloud-left {
+    top: 60px;
+    left: 60px;
+}
+
+.cloud-left::before {
+    width: 70px;
+    height: 70px;
+    top: -30px;
+    left: 20px;
+}
+
+.cloud-left::after {
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    left: 80px;
+}
+
+.cloud-right {
+    top: 80px;
+    right: 80px;
+}
+
+.cloud-right::before {
+    width: 60px;
+    height: 60px;
+    top: -25px;
+    left: 30px;
+}
+
+.cloud-right::after {
+    width: 45px;
+    height: 45px;
+    top: -10px;
+    left: 90px;
+}
+
+/* Заголовок */
+.title-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px 50px;
+    border-radius: 10px;
+    border: 3px solid #8B7355;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-box h1 {
+    color: #8B4513;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.title-box .author {
+    color: #2E7D32;
+    font-size: 16px;
+}
+
+/* Правила */
+.rules-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: 2px solid #4CAF50;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.rules-box h2 {
+    color: #2E7D32;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.rules-box ul {
+    list-style: none;
+    text-align: left;
+}
+
+.rules-box li {
+    color: #4a4a4a;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+/* Управление */
+.controls-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 30px;
+    border-radius: 10px;
+    border: 2px solid #5C6BC0;
+    color: #3F51B5;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.controls-box .key {
+    background: #e0e0e0;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #999;
+    font-size: 14px;
+}
+
+/* Кредиты */
+.credits {
+    text-align: center;
+    color: #555;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.credits p {
+    margin: 3px 0;
+}
+
+.credits a {
+    color: #1976D2;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    text-decoration: underline;
+}
+
+/* Подсказка старта */
+.start-hint {
+    color: #E65100;
+    font-size: 24px;
+    font-weight: bold;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
