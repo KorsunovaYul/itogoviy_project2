@@ -34,7 +34,7 @@
 
 ```
 public/
-├── game.html          - главный файл игры
+├── index.html          - главный файл игры
 ├── css/
 │   └── game-style.css - стили
 ├── js/
